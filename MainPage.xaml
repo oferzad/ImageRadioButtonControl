@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tests.Controls"
+             x:Class="Tests.MainPage">
+
+    <StackLayout local:RadioButtonGroup.GroupName="OptionsGroup"
+             local:RadioButtonGroup.SelectedValue="{Binding SelectedOption}">
+        <HorizontalStackLayout >
+        <Frame Margin="5">
+        <local:ImageRadioButton Text="Option 1" ImageSource="dotnet_bot.png" IsChecked="{Binding Option1IsChecked}" Value="Option1" GroupName="OptionsGroup"/>
+        </Frame>
+        <Frame Margin="5">
+        <local:ImageRadioButton Text="Option 2" ImageSource="dotnet_bot.png" IsChecked="{Binding Option2IsChecked}" Value="Option2" GroupName="OptionsGroup"/>
+        </Frame>
+        </HorizontalStackLayout>
+        <Label Text="{Binding SelectedOption}"></Label>
+    </StackLayout>
+
+</ContentPage>
