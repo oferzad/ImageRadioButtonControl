@@ -132,14 +132,20 @@ namespace Tests.Controls
             label.SetBinding(Label.TextProperty, new Binding(nameof(Text), source: this));
             label.HorizontalOptions = LayoutOptions.Center;
 
-            var vertical = new VerticalStackLayout
+            var grid = new Microsoft.Maui.Controls.Grid
             {
-                Children = { image, label }
+                RowDefinitions =
+                {
+                    new RowDefinition(GridLength.Star),
+                    new RowDefinition(GridLength.Star)
+                }
             };
+            grid.Add(image, 0, 0);
+            grid.Add(label, 0, 1);
             
             var stackLayout = new HorizontalStackLayout
             {
-                Children = { radioButton, vertical }
+                Children = { radioButton, grid }
             };
             Content = stackLayout;
         }
